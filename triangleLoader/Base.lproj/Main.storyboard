@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKL-Wc-Ano" customClass="TriangleLoader" customModule="triangleLoader" customModuleProvider="target">
-                                <rect key="frame" x="123.5" y="279.5" width="128" height="128"/>
+                                <rect key="frame" x="59.5" y="215.5" width="256" height="256"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="WIp-pS-ojv"/>
+                                    <constraint firstAttribute="width" constant="256" id="WIp-pS-ojv"/>
                                     <constraint firstAttribute="width" secondItem="sKL-Wc-Ano" secondAttribute="height" multiplier="1:1" id="zy3-C3-RYT"/>
                                 </constraints>
                             </view>

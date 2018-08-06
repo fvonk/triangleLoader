@@ -18,7 +18,7 @@ class TriangleLoader: UIView {
     
     var isAnimating = false
     
-    private let duration = 1.48
+    private let duration = 1.43
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -88,16 +88,11 @@ class TriangleLoader: UIView {
         guard !isAnimating else { return }
         isAnimating = true
         
-        let rotateMainAnimation = CABasicAnimation(keyPath: "transform.rotation")
-//        rotateMainAnimation.keyTimes = [0, 0.8, 1.0]
-//        rotateMainAnimation.values = [0.0, CGFloat.pi / 3, CGFloat.pi / 3]
-        rotateMainAnimation.fromValue = 0.0
-        rotateMainAnimation.toValue = CGFloat.pi / 3
-        rotateMainAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        let rotateMainAnimation = CAKeyframeAnimation(keyPath: "transform.rotation")
+        rotateMainAnimation.keyTimes = [0.0, 0.9, 1.0]
+        rotateMainAnimation.values = [0.0, CGFloat.pi / 3 * 0.9775, CGFloat.pi / 3]
         
         let scaleMainAnimation = CABasicAnimation(keyPath: "transform.scale")
-//        scaleMainAnimation.keyTimes = [0, 0.8, 1.0]
-//        scaleMainAnimation.values = [1.0, 0.5, 0.5]
         scaleMainAnimation.fromValue = 1.0
         scaleMainAnimation.toValue = 0.5
         scaleMainAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
@@ -107,15 +102,12 @@ class TriangleLoader: UIView {
         groupMainAnimation.duration = duration
         groupMainAnimation.repeatCount = Float.infinity
         groupMainAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        groupMainAnimation.speed = 1.0
         
         centerTriangle.add(groupMainAnimation, forKey: "groupMainAnimation")
         
         
         //FIRST
         let rotateTopAnimation = CABasicAnimation(keyPath: "transform.rotation")
-//        rotateTopAnimation.keyTimes = [0, 0.8, 1.0]
-//        rotateTopAnimation.values = [CGFloat.pi * 2 / 2, CGFloat.pi * 4 / 2, CGFloat.pi * 4 / 2]
         rotateTopAnimation.fromValue = CGFloat.pi * 2 / 2
         rotateTopAnimation.toValue = CGFloat.pi * 4 / 2
         
@@ -138,7 +130,6 @@ class TriangleLoader: UIView {
         groupTopAnimation.duration = duration
         groupTopAnimation.repeatCount = Float.infinity
         groupTopAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        groupTopAnimation.speed = 1.0
         
         topTriangle.add(groupTopAnimation, forKey: "groupTopAnimation")
         
@@ -155,7 +146,7 @@ class TriangleLoader: UIView {
         let positionRightAnimation = CAKeyframeAnimation(keyPath: "position")
         let rightPath = UIBezierPath()
         rightPath.move(to: CGPoint(x: bounds.size.width * 5 / 4,
-                                 y: bounds.size.height / 4))
+                                 y: 0))
         rightPath.addQuadCurve(to: CGPoint(x: bounds.size.width * 2 / 4,
                                            y: bounds.size.height * 2 / 4),
                                controlPoint: CGPoint(x: bounds.size.width,
@@ -167,7 +158,6 @@ class TriangleLoader: UIView {
         groupRightAnimation.duration = duration
         groupRightAnimation.repeatCount = Float.infinity
         groupRightAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        groupRightAnimation.speed = 1.0
         
         rightTriangle.add(groupRightAnimation, forKey: "groupRightAnimation")
         
@@ -183,7 +173,7 @@ class TriangleLoader: UIView {
         let positionLeftAnimation = CAKeyframeAnimation(keyPath: "position")
         let leftPath = UIBezierPath()
         leftPath.move(to: CGPoint(x: bounds.size.width / 2,
-                                   y: bounds.size.height * 5 / 4))
+                                   y: bounds.size.height * 4 / 4))
         leftPath.addQuadCurve(to: CGPoint(x: bounds.size.width * 2 / 4,
                                            y: bounds.size.height * 2 / 4),
                                controlPoint: CGPoint(x: 0,
@@ -195,7 +185,6 @@ class TriangleLoader: UIView {
         groupLeftAnimation.duration = duration
         groupLeftAnimation.repeatCount = Float.infinity
         groupLeftAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        groupLeftAnimation.speed = 1.0
         
         leftTriangle.add(groupLeftAnimation, forKey: "groupLeftAnimation")
     }
