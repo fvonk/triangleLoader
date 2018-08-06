@@ -90,7 +90,7 @@ class TriangleLoader: UIView {
         
         let rotateMainAnimation = CAKeyframeAnimation(keyPath: "transform.rotation")
         rotateMainAnimation.keyTimes = [0.0, 0.9, 1.0]
-        rotateMainAnimation.values = [0.0, CGFloat.pi / 3 * 0.9775, CGFloat.pi / 3]
+        rotateMainAnimation.values = [0.0, CGFloat.pi / 3 * 0.980, CGFloat.pi / 3]
         
         let scaleMainAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleMainAnimation.fromValue = 1.0
@@ -108,8 +108,8 @@ class TriangleLoader: UIView {
         
         //FIRST
         let rotateTopAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotateTopAnimation.fromValue = CGFloat.pi * 2 / 2
-        rotateTopAnimation.toValue = CGFloat.pi * 4 / 2
+        rotateTopAnimation.fromValue = CGFloat.pi
+        rotateTopAnimation.toValue = CGFloat.pi * 2
         
         let scaleTopAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleTopAnimation.fromValue = 0.0
@@ -136,8 +136,8 @@ class TriangleLoader: UIView {
         
         //SECOND
         let rotateRightAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotateRightAnimation.fromValue = CGFloat.pi * 2 / 2
-        rotateRightAnimation.toValue = CGFloat.pi * 4 / 2
+        rotateRightAnimation.fromValue = CGFloat.pi
+        rotateRightAnimation.toValue = CGFloat.pi * 2
         
         let scaleRightAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleRightAnimation.fromValue = 0.0
@@ -145,10 +145,10 @@ class TriangleLoader: UIView {
         
         let positionRightAnimation = CAKeyframeAnimation(keyPath: "position")
         let rightPath = UIBezierPath()
-        rightPath.move(to: CGPoint(x: bounds.size.width * 5 / 4,
+        rightPath.move(to: CGPoint(x: bounds.size.width,
                                  y: 0))
-        rightPath.addQuadCurve(to: CGPoint(x: bounds.size.width * 2 / 4,
-                                           y: bounds.size.height * 2 / 4),
+        rightPath.addQuadCurve(to: CGPoint(x: bounds.size.width / 2,
+                                           y: bounds.size.height / 2),
                                controlPoint: CGPoint(x: bounds.size.width,
                                                      y: bounds.size.height))
         positionRightAnimation.path = rightPath.cgPath
@@ -163,8 +163,8 @@ class TriangleLoader: UIView {
         
         //THIRD
         let rotateLeftAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotateLeftAnimation.fromValue = CGFloat.pi * 2 / 2
-        rotateLeftAnimation.toValue = CGFloat.pi * 4 / 2
+        rotateLeftAnimation.fromValue = CGFloat.pi
+        rotateLeftAnimation.toValue = CGFloat.pi * 2
         
         let scaleLeftAnimation = CABasicAnimation(keyPath: "transform.scale")
         scaleLeftAnimation.fromValue = 0.0
@@ -173,11 +173,11 @@ class TriangleLoader: UIView {
         let positionLeftAnimation = CAKeyframeAnimation(keyPath: "position")
         let leftPath = UIBezierPath()
         leftPath.move(to: CGPoint(x: bounds.size.width / 2,
-                                   y: bounds.size.height * 4 / 4))
-        leftPath.addQuadCurve(to: CGPoint(x: bounds.size.width * 2 / 4,
-                                           y: bounds.size.height * 2 / 4),
+                                   y: bounds.size.height * 5 / 4))
+        leftPath.addQuadCurve(to: CGPoint(x: bounds.size.width / 2,
+                                           y: bounds.size.height / 2),
                                controlPoint: CGPoint(x: 0,
-                                                     y: bounds.size.height))
+                                                     y: bounds.size.height * 3 / 4))
         positionLeftAnimation.path = leftPath.cgPath
         
         let groupLeftAnimation = CAAnimationGroup()
