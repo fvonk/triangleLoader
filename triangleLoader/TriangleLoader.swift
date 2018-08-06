@@ -18,7 +18,7 @@ class TriangleLoader: UIView {
     
     var isAnimating = false
     
-    private let duration = 1.45
+    private let duration = 1.48
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -88,17 +88,19 @@ class TriangleLoader: UIView {
         guard !isAnimating else { return }
         isAnimating = true
         
-//        for i in 0...3 {
-//
-//        }
-        
         let rotateMainAnimation = CABasicAnimation(keyPath: "transform.rotation")
+//        rotateMainAnimation.keyTimes = [0, 0.8, 1.0]
+//        rotateMainAnimation.values = [0.0, CGFloat.pi / 3, CGFloat.pi / 3]
         rotateMainAnimation.fromValue = 0.0
         rotateMainAnimation.toValue = CGFloat.pi / 3
+        rotateMainAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
         let scaleMainAnimation = CABasicAnimation(keyPath: "transform.scale")
+//        scaleMainAnimation.keyTimes = [0, 0.8, 1.0]
+//        scaleMainAnimation.values = [1.0, 0.5, 0.5]
         scaleMainAnimation.fromValue = 1.0
         scaleMainAnimation.toValue = 0.5
+        scaleMainAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
         let groupMainAnimation = CAAnimationGroup()
         groupMainAnimation.animations = [rotateMainAnimation, scaleMainAnimation]
@@ -112,6 +114,8 @@ class TriangleLoader: UIView {
         
         //FIRST
         let rotateTopAnimation = CABasicAnimation(keyPath: "transform.rotation")
+//        rotateTopAnimation.keyTimes = [0, 0.8, 1.0]
+//        rotateTopAnimation.values = [CGFloat.pi * 2 / 2, CGFloat.pi * 4 / 2, CGFloat.pi * 4 / 2]
         rotateTopAnimation.fromValue = CGFloat.pi * 2 / 2
         rotateTopAnimation.toValue = CGFloat.pi * 4 / 2
         
