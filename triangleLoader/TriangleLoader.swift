@@ -16,9 +16,11 @@ class TriangleLoader: UIView {
     var rightTriangle: CAShapeLayer!
     var leftTriangle: CAShapeLayer!
     
+    var bottomLabel: UILabel!
+    
     var isAnimating = false
     
-    private let duration = 1.43
+    private let duration = 0.6//1.43
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,7 +43,7 @@ class TriangleLoader: UIView {
         
         centerTriangle = CAShapeLayer()
         centerTriangle.frame = bounds
-        centerTriangle.fillColor = UIColor.black.cgColor
+        centerTriangle.fillColor = UIColor.white.cgColor
         centerTriangle.path = mainTrianglePath.cgPath
         layer.addSublayer(centerTriangle)
         
@@ -54,7 +56,7 @@ class TriangleLoader: UIView {
         
         topTriangle = CAShapeLayer()
         topTriangle.frame = bounds
-        topTriangle.fillColor = UIColor.black.cgColor
+        topTriangle.fillColor = UIColor.white.cgColor
         topTriangle.path = topTrianglePath.cgPath
         layer.addSublayer(topTriangle)
         
@@ -66,7 +68,7 @@ class TriangleLoader: UIView {
         
         rightTriangle = CAShapeLayer()
         rightTriangle.frame = bounds
-        rightTriangle.fillColor = UIColor.black.cgColor
+        rightTriangle.fillColor = UIColor.white.cgColor
         rightTriangle.path = rightTrianglePath.cgPath
         layer.addSublayer(rightTriangle)
         
@@ -78,9 +80,20 @@ class TriangleLoader: UIView {
         
         leftTriangle = CAShapeLayer()
         leftTriangle.frame = bounds
-        leftTriangle.fillColor = UIColor.black.cgColor
+        leftTriangle.fillColor = UIColor.white.cgColor
         leftTriangle.path = leftTrianglePath.cgPath
         layer.addSublayer(leftTriangle)
+        
+        
+        bottomLabel = UILabel(frame: CGRect(x: 0, y: bounds.size.height * 2, width: bounds.size.width, height: 28))
+        bottomLabel.textColor = UIColor.white
+        bottomLabel.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.semibold)
+        bottomLabel.text = "Loading __%"
+        bottomLabel.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        bottomLabel.layer.cornerRadius = 14
+        bottomLabel.layer.masksToBounds = true
+        bottomLabel.textAlignment = .center
+        addSubview(bottomLabel)
     }
     
     

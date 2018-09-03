@@ -20,22 +20,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKL-Wc-Ano" customClass="TriangleLoader" customModule="triangleLoader" customModuleProvider="target">
-                                <rect key="frame" x="60" y="216" width="256" height="256"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="124" y="280" width="128" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="256" id="ZHl-6z-wea"/>
+                                    <constraint firstAttribute="width" constant="128" id="ZHl-6z-wea"/>
                                     <constraint firstAttribute="width" secondItem="sKL-Wc-Ano" secondAttribute="height" multiplier="1:1" id="zy3-C3-RYT"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5h-Cj-42T">
-                                <rect key="frame" x="171" y="522.5" width="34" height="30"/>
+                                <rect key="frame" x="171" y="458.5" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yze-KR-Czl"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sKL-Wc-Ano" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6hj-kA-6JU"/>
                             <constraint firstItem="f5h-Cj-42T" firstAttribute="centerX" secondItem="sKL-Wc-Ano" secondAttribute="centerX" id="ISI-VV-QiR"/>
